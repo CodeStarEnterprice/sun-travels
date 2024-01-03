@@ -1,0 +1,90 @@
+/* navbar.component.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  background: #2980b9;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure the navigation bar is on top */
+}
+
+nav .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 90%;
+  background: #2980b9;
+  margin: auto;
+}
+
+nav .navbar .logo a {
+  color: #fff;
+  font-size: 27px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav .navbar .menu {
+  display: flex;
+}
+
+.navbar .menu li {
+  list-style: none;
+  margin: 0 15px;
+}
+
+.navbar .menu li a {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Add a slight transition effect on the menu items */
+.navbar .menu li a:hover {
+  color: #ecf0f1;
+  transition: color 0.3s ease;
+}
+
+/* Optional: Adjust the section styling as needed */
+section {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #96c7e8;
+  font-size: 70px;
+  background: #fff; /* Example background color */
+}
+
+/* Optional: Style the button differently */
+.button a {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  background: #2980b9;
+  padding: 10px 15px; /* Adjust padding */
+  font-size: 16px; /* Adjust font size */
+  border-radius: 8px; /* Adjust border radius */
+  box-shadow: rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+
+/* Optional: Add a hover effect on the button */
+.button a:hover {
+  background: #1a5276; /* Change the background color on hover */
+}

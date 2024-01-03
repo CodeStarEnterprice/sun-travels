@@ -1,0 +1,22 @@
+<!-- hotel-search.component.html -->
+<div class="wrapper">
+    <h2>Hotel Search</h2>
+    <form id="hotelSearchForm">
+      <div class="input-box">
+        <input type="date" placeholder="Check-in Date" required>
+      </div>
+      <div class="input-box">
+        <input type="number" placeholder="Number of Nights" min="1" required>
+      </div>
+      <div id="roomInputs">
+        <!-- Room input fields will be added here dynamically -->
+      </div>
+      <div class="input-box button">
+        <input type="button" value="Add Room" (click)="addRoom()">
+      </div>
+      <div class="input-box button">
+        <input type="Submit" value="Search Hotels">
+      </div>
+    </form>
+  </div>
+  
