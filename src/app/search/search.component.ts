@@ -1,29 +1,50 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent {
-  addRoom() {
-    const roomInputs = document.getElementById('roomInputs');
+export class SearchComponent implements OnInit {
+  hotelSearchForm!: FormGroup;
 
-    if (roomInputs) {
-      const roomContainer = document.createElement('div');
-      roomContainer.className = 'room-container';
+  constructor(private fb: FormBuilder) { }
 
-      const roomLabel = document.createElement('label');
-      roomLabel.textContent = 'Room Combination:';
+  ngOnInit() {
+    this.hotelSearchForm = this.fb.group({
+      roomCombinations: this.fb.array([this.createRoomCombination()])
+    });
+  }
 
-      const roomInput = document.createElement('input');
-      roomInput.type = 'text';
-      roomInput.placeholder = 'e.g., 1 room with 1 adult and 1 room with 2 adults';
-      roomInput.name = 'roomCombination';
+  get roomCombinations() {
+    return this.hotelSearchForm.get('roomCombinations') as FormArray;
+  }
 
-      roomContainer.appendChild(roomLabel);
-      roomContainer.appendChild(roomInput);
-      roomInputs.appendChild(roomContainer);
-    }
+  createRoomCombination() {
+    return this.fb.group({
+      roomCount: [1, Validators.min(1)],
+      numberOfAdults: [1, Validators.min(1)]
+    });
+  }
+
+  addRoomCombination() {
+    this.roomCombinations.push(this.createRoomCombination());
+  }
+
+  removeRoomCombination(index: number) {
+    this.roomCombinations.removeAt(index);
+  }
+
+  getRoomCombinationPlaceholder(index: number): string {
+    const roomCount = this.roomCombinations.at(index)?.get('roomCount')?.value;
+    const adultCount = this.roomCombinations.at(index)?.get('numberOfAdults')?.value;
+    return `${roomCount} room${roomCount > 1 ? 's' : ''} with ${adultCount} adult${adultCount > 1 ? 's' : ''}`;
+  }
+  
+
+  onSubmit() {
+    // Handle form submission
+    console.log(this.hotelSearchForm.value);
   }
 }

@@ -13,7 +13,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #4070f4;
+  background: #2980b9;
 }
 
 /* Adjusted margin-top to create space below the navigation bar */
@@ -43,7 +43,7 @@ body {
   height: 3px;
   width: 28px;
   border-radius: 12px;
-  background: #4070f4;
+  background: #2980b9;
 }
 
 .wrapper form {
@@ -51,52 +51,67 @@ body {
 }
 
 .wrapper form .input-box {
-  height: 52px;
   margin: 18px 0;
 }
 
-form .input-box input {
+.wrapper form .input-box label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.wrapper form .input-box input {
   height: 100%;
   width: 100%;
   outline: none;
   padding: 0 15px;
   font-size: 17px;
   font-weight: 400;
-  color: #333;
+  /* color: #f4fafa; */
+  color: #010404;
   border: 1.5px solid #C7BEBE;
-  border-bottom-width: 2.5px;
   border-radius: 6px;
   transition: all 0.3s ease;
 }
 
 .input-box input:focus,
 .input-box input:valid {
-  border-color: #4070f4;
+  border-color: #2980b9;
 }
 
 .input-box.button input {
   color: #fff;
   letter-spacing: 1px;
   border: none;
-  background: #4070f4;
+  background: #2980b9;
   cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold; /* Added bold font-weight */
 }
 
 .input-box.button input:hover {
-  background: #0e4bf1;
+  background: #2980b9;
 }
 
-form .text h3 {
+.wrapper form .text h3 {
   color: #333;
   width: 100%;
   text-align: center;
 }
 
-form .text h3 a {
-  color: #4070f4;
+.wrapper form .text h3 a {
+  color: #2980b9;
   text-decoration: none;
 }
 
-form .text h3 a:hover {
+.wrapper form .text h3 a:hover {
   text-decoration: underline;
+}
+
+.room-combination {
+  margin: 18px 0;
 }

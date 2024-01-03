@@ -1,22 +1,44 @@
-<!-- hotel-search.component.html -->
+<!-- Updated HTML for Search Component -->
 <div class="wrapper">
-    <h2>Hotel Search</h2>
-    <form id="hotelSearchForm">
-      <div class="input-box">
-        <input type="date" placeholder="Check-in Date" required>
+  <h2>Hotel Search</h2>
+  <form [formGroup]="hotelSearchForm" (ngSubmit)="onSubmit()">
+    <!-- Check-in Date -->
+    <div class="input-box">
+      <label>Check-in Date:</label>
+      <input type="date" formControlName="checkInDate" required>
+    </div>
+
+    <!-- Number of Nights -->
+    <div class="input-box">
+      <label>Number of Nights:</label>
+      <input type="number" formControlName="numberOfNights" min="1" required>
+    </div>
+
+    <!-- Room Combinations -->
+    <div formArrayName="roomCombinations">
+      <div *ngFor="let roomCombination of roomCombinations.controls; let i = index" [formGroupName]="i">
+        <div class="input-box">
+          <label>Room Count:</label>
+          <input type="number" formControlName="roomCount" min="1" required>
+        </div>
+        <div class="input-box">
+          <label>Number of Adults:</label>
+          <input type="number" formControlName="numberOfAdults" min="1" required>
+        </div>
+        <div class="input-box button">
+          <input type="button" value="Remove Room" (click)="removeRoomCombination(i)">
+        </div>
       </div>
-      <div class="input-box">
-        <input type="number" placeholder="Number of Nights" min="1" required>
-      </div>
-      <div id="roomInputs">
-        <!-- Room input fields will be added here dynamically -->
-      </div>
-      <div class="input-box button">
-        <input type="button" value="Add Room" (click)="addRoom()">
-      </div>
-      <div class="input-box button">
-        <input type="Submit" value="Search Hotels">
-      </div>
-    </form>
-  </div>
-  
+    </div>
+
+    <!-- Add Room Button -->
+    <div class="input-box button">
+      <input type="button" value="Add Room" (click)="addRoomCombination()">
+    </div>
+
+    <!-- Submit Button -->
+    <div class="input-box button">
+      <input type="Submit" value="Search Hotels">
+    </div>
+  </form>
+</div>
