@@ -1,0 +1,168 @@
+/* Add this content to contract.component.css */
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2980b9;
+  }
+  
+  /* Wrapper styles */
+  .wrapper {
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    background: #fff;
+    padding: 34px;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 80px; /* Adjust this value based on the height of your navigation bar */
+  }
+  
+  .wrapper h2 {
+    position: relative;
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .wrapper h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 28px;
+    border-radius: 12px;
+    background: #2980b9;
+  }
+  
+  .wrapper form {
+    margin-top: 30px;
+  }
+  
+  /* Form input styles */
+  .wrapper form .input-box {
+    margin: 18px 0;
+  }
+  
+  .wrapper form .input-box label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #333;
+  }
+  
+  .wrapper form .input-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+    border: 1.5px solid #C7BEBE;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  .input-box input:focus,
+  .input-box input:valid {
+    border-color: #2980b9;
+  }
+  
+  /* Button styles */
+  .wrapper form .input-box.button input {
+    color: #fff;
+    letter-spacing: 1px;
+    border: none;
+    background: #2980b9;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .wrapper form .input-box.button input:hover {
+    background: #2980b9;
+  }
+  
+  /* Text styles */
+  .wrapper form .text h3 {
+    color: #333;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .wrapper form .text h3 a {
+    color: #2980b9;
+    text-decoration: none;
+  }
+  
+  .wrapper form .text h3 a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Room combination styles */
+  .room-combination {
+    margin: 18px 0;
+  }
+  
+  .container {
+    display: flex;
+    align-items: flex-start; /* Align items to the start (top) of the container */
+  }
+  
+  .image-container,
+  .form-container {
+    flex: 1;
+    padding: 20px; /* Adjust spacing as needed */
+    margin-top: 20px; /* Add margin-top to create space between image container and form container */
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  /* Button styles */
+.wrapper form .input-box.button input,
+.wrapper form .input-box.button button {
+  font-size: 17px;
+  color: #fff;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+
+.wrapper form .input-box.button input:hover,
+.wrapper form .input-box.button button:hover {
+  background: #2980b9;
+}
+
+/* Style for Save Contract button */
+.wrapper form .input-box.button.save input {
+  background: #2980b9; /* Red color for delete button */
+}
+
+.wrapper form .input-box.button.delete button {
+  background: #ff0021; /* Red color for delete button */
+}
+
+.wrapper form .input-box.button.update button {
+  background: #2ecc71; /* Green color for update button */
+}

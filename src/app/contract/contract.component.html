@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="image-container">
+      <br>
+      <br>
+      <br>
+      <br>
+      <img src="assets/hotel.jpg" alt="Hotel Image">
+    </div>
+  
+    <div class="form-container">
+      <div class="wrapper">
+        <div class="search-container">
+          <h2>Hotel Contract</h2>
+          <form [formGroup]="hotelContractForm" (ngSubmit)="onSubmit()">
+            <!-- Hotel ID -->
+            <div class="input-box">
+              <label>Hotel ID:</label>
+              <input type="text" formControlName="hotelId" required>
+            </div>
+  
+            <!-- Valid from -->
+            <div class="input-box">
+              <label>Valid from:</label>
+              <input type="date" formControlName="validFrom" required>
+            </div>
+  
+            <!-- Valid to -->
+            <div class="input-box">
+              <label>Valid to:</label>
+              <input type="date" formControlName="validTo" required>
+            </div>
+  
+            <!-- Submit Button -->
+            <div class="input-box button save">
+                <input type="submit" value="Save Contract">
+              </div>
+              <div class="input-box">
+                <label>Contract ID:</label>
+                <input type="text" formControlName="hotelId" required>
+              </div>
+
+              <div class="input-box button delete">
+                <button type="button">Delete</button> 
+                <!-- (click)="onDelete() -->
+              </div>
+              <div class="input-box button update">
+                <button type="button">Update</button>
+                <!-- (click)="onUpdate() -->
+              </div>
+              
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
