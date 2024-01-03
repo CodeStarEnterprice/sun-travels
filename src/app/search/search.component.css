@@ -1,6 +1,7 @@
-/* Updated CSS for Search Component */
+/* Font import */
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
+/* Global styles */
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +17,7 @@ body {
   background: #2980b9;
 }
 
-/* Adjusted margin-top to create space below the navigation bar */
+/* Wrapper styles */
 .wrapper {
   position: relative;
   max-width: 430px;
@@ -50,6 +51,7 @@ body {
   margin-top: 30px;
 }
 
+/* Form input styles */
 .wrapper form .input-box {
   margin: 18px 0;
 }
@@ -69,8 +71,7 @@ body {
   padding: 0 15px;
   font-size: 17px;
   font-weight: 400;
-  /* color: #f4fafa; */
-  color: #010404;
+  color: #333;
   border: 1.5px solid #C7BEBE;
   border-radius: 6px;
   transition: all 0.3s ease;
@@ -81,22 +82,21 @@ body {
   border-color: #2980b9;
 }
 
-.input-box.button input {
+/* Button styles */
+.wrapper form .input-box.button input {
   color: #fff;
   letter-spacing: 1px;
   border: none;
   background: #2980b9;
   cursor: pointer;
-  padding: 10px 20px;
-  border-radius: 4px;
-  font-size: 16px;
-  font-weight: bold; /* Added bold font-weight */
+  transition: background 0.3s ease;
 }
 
-.input-box.button input:hover {
+.wrapper form .input-box.button input:hover {
   background: #2980b9;
 }
 
+/* Text styles */
 .wrapper form .text h3 {
   color: #333;
   width: 100%;
@@ -112,6 +112,26 @@ body {
   text-decoration: underline;
 }
 
+/* Room combination styles */
 .room-combination {
   margin: 18px 0;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start; /* Align items to the start (top) of the container */
+}
+
+.image-container,
+.form-container {
+  flex: 1;
+  padding: 20px; /* Adjust spacing as needed */
+  margin-top: 20px; /* Add margin-top to create space between image container and form container */
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
